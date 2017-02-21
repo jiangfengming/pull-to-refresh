@@ -73,6 +73,7 @@ var ontouchpan = function (_ref) {
 
 var pullToRefresh = function (opts) {
   if (!opts.scrollable) opts.scrollable = document.body;
+  if (!opts.onStateChange) opts.onStateChange = function () {/* noop */};
   var container = opts.container,
       scrollable = opts.scrollable,
       threshold = opts.threshold,
@@ -83,7 +84,7 @@ var pullToRefresh = function (opts) {
 
   var distance = void 0,
       offset = void 0,
-      state = void 0; // state: pulling, reached, refreshing, restoring
+      state = void 0; // state: pulling, aborting, reached, refreshing, restoring
 
   function addClass(cls) {
     container.classList.add('pull-to-refresh--' + cls);
@@ -107,7 +108,7 @@ var pullToRefresh = function (opts) {
         offset = d;
         state = 'pulling';
         addClass(state);
-        if (onStateChange) onStateChange(state, opts);
+        onStateChange(state, opts);
       }
 
       d = d - offset;
@@ -118,7 +119,7 @@ var pullToRefresh = function (opts) {
         removeClass(state);
         state = state === 'reached' ? 'pulling' : 'reached';
         addClass(state);
-        if (onStateChange) onStateChange(state, opts);
+        onStateChange(state, opts);
       }
 
       animates.pulling(distance, opts);
@@ -127,28 +128,32 @@ var pullToRefresh = function (opts) {
       if (state == null) return;
 
       if (state === 'pulling') {
-        animates.restoring(opts).then(function () {
+        removeClass(state);
+        state = 'aborting';
+        onStateChange(state);
+        addClass(state);
+        animates.aborting(opts).then(function () {
           removeClass(state);
           distance = state = offset = null;
-          if (onStateChange) onStateChange(state);
+          onStateChange(state);
         });
       } else {
         removeClass(state);
         state = 'refreshing';
         addClass(state);
-        if (onStateChange) onStateChange(state, opts);
+        onStateChange(state, opts);
         animates.refreshing(opts);
 
         refresh().then(function () {
           removeClass(state);
           state = 'restoring';
           addClass(state);
-          if (onStateChange) onStateChange(state);
+          onStateChange(state);
 
           animates.restoring(opts).then(function () {
             removeClass(state);
             distance = state = offset = null;
-            if (onStateChange) onStateChange(state);
+            onStateChange(state);
           });
         });
       }

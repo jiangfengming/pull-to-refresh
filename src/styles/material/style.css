@@ -14,6 +14,7 @@
 }
 
 .pull-to-refresh--pulling .pull-to-refresh,
+.pull-to-refresh--aborting .pull-to-refresh,
 .pull-to-refresh--reached .pull-to-refresh,
 .pull-to-refresh--refreshing .pull-to-refresh,
 .pull-to-refresh--restoring .pull-to-refresh {
@@ -21,13 +22,12 @@
 }
 
 .pull-to-refresh--pulling .pull-to-refresh__spinner,
+.pull-to-refresh--aborting .pull-to-refresh__spinner,
 .pull-to-refresh--reached .pull-to-refresh__spinner,
 .pull-to-refresh--refreshing .pull-to-refresh__icon,
 .pull-to-refresh--restoring .pull-to-refresh__icon {
   display: none;
 }
-
-/* https://codepen.io/jczimm/pen/vEBpoL */
 
 .pull-to-refresh__spinner {
   transform-origin: center center;

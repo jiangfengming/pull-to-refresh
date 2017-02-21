@@ -23,7 +23,7 @@ var animates = {
     var container = _ref.container,
         threshold = _ref.threshold;
 
-    container.style.transition = 'transform 0.1s';
+    container.style.transition = 'transform 0.2s';
     container.style.transform = 'translate3d(0, ' + threshold / 2.5 + 'px, 0)';
   },
   restoring: function restoring(_ref2) {
@@ -39,6 +39,8 @@ var animates = {
     });
   }
 };
+
+animates.aborting = animates.restoring;
 
 return animates;
 

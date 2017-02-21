@@ -2,9 +2,10 @@ import ontouchpan from './ontouchpan'
 
 export default function(opts) {
   if (!opts.scrollable) opts.scrollable = document.body
+  if (!opts.onStateChange) opts.onStateChange = () => { /* noop */ }
   const { container, scrollable, threshold, refresh, onStateChange, animates } = opts
 
-  let distance, offset, state // state: pulling, reached, refreshing, restoring
+  let distance, offset, state // state: pulling, aborting, reached, refreshing, restoring
 
   function addClass(cls) {
     container.classList.add('pull-to-refresh--' + cls)
@@ -28,7 +29,7 @@ export default function(opts) {
         offset = d
         state = 'pulling'
         addClass(state)
-        if (onStateChange) onStateChange(state, opts)
+        onStateChange(state, opts)
       }
 
       d = d - offset
@@ -39,7 +40,7 @@ export default function(opts) {
         removeClass(state)
         state = state === 'reached' ? 'pulling' : 'reached'
         addClass(state)
-        if (onStateChange) onStateChange(state, opts)
+        onStateChange(state, opts)
       }
 
       animates.pulling(distance, opts)
@@ -49,28 +50,32 @@ export default function(opts) {
       if (state == null) return
 
       if (state === 'pulling') {
-        animates.restoring(opts).then(() => {
+        removeClass(state)
+        state = 'aborting'
+        onStateChange(state)
+        addClass(state)
+        animates.aborting(opts).then(() => {
           removeClass(state)
           distance = state = offset = null
-          if (onStateChange) onStateChange(state)
+          onStateChange(state)
         })
       } else {
         removeClass(state)
         state = 'refreshing'
         addClass(state)
-        if (onStateChange) onStateChange(state, opts)
+        onStateChange(state, opts)
         animates.refreshing(opts)
 
         refresh().then(() => {
           removeClass(state)
           state = 'restoring'
           addClass(state)
-          if (onStateChange) onStateChange(state)
+          onStateChange(state)
 
           animates.restoring(opts).then(() => {
             removeClass(state)
             distance = state = offset = null
-            if (onStateChange) onStateChange(state)
+            onStateChange(state)
           })
         })
       }

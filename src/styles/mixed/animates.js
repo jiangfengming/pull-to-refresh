@@ -1,4 +1,4 @@
-export default {
+const animates = {
   pulling(d, opts) {
     if (!opts.elRefresh) opts.elRefresh = opts.container.querySelector('.pull-to-refresh')
 
@@ -13,7 +13,7 @@ export default {
   },
 
   refreshing({ container, threshold }) {
-    container.style.transition = 'transform 0.1s'
+    container.style.transition = 'transform 0.2s'
     container.style.transform = `translate3d(0, ${threshold / 2.5}px, 0)`
   },
 
@@ -28,3 +28,7 @@ export default {
     })
   }
 }
+
+animates.aborting = animates.restoring
+
+export default animates

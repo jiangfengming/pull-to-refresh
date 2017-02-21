@@ -3,6 +3,7 @@ const babel = require('rollup-plugin-babel')
 
 const files = [
   'pullToRefresh',
+  ['styles/material/animates', 'ptrAnimatesMaterial'],
   ['styles/mixed/animates', 'ptrAnimatesMixed']
 ]
 
