@@ -72,6 +72,7 @@ var ontouchpan = function (_ref) {
 };
 
 var pullToRefresh = function (opts) {
+  if (!opts.scrollable) opts.scrollable = document.body;
   var container = opts.container,
       scrollable = opts.scrollable,
       threshold = opts.threshold,
