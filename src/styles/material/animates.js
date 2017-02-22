@@ -1,39 +1,39 @@
 export default {
   pulling(d, opts) {
-    if (!opts.elRefresh) opts.elRefresh = opts.container.querySelector('.pull-to-refresh')
+    if (!opts.elControl) opts.elControl = opts.container.querySelector('.pull-to-refresh-material__control')
 
-    const { threshold, elRefresh } = opts
+    const { threshold, elControl } = opts
 
     let p = d / threshold
     if (p > 1) p = 1
     else p = p * p * p
-    elRefresh.style.opacity = p
-    elRefresh.style.transform = `translate3d(-50%, ${d / 2.5}px, 0) rotate(${360 * p}deg)`
+    elControl.style.opacity = p
+    elControl.style.transform = `translate3d(-50%, ${d / 2.5}px, 0) rotate(${360 * p}deg)`
   },
 
-  refreshing({ elRefresh, threshold }) {
-    elRefresh.style.transition = 'transform 0.2s'
-    elRefresh.style.transform = `translate3d(-50%, ${threshold / 2.5}px, 0)`
+  refreshing({ elControl, threshold }) {
+    elControl.style.transition = 'transform 0.2s'
+    elControl.style.transform = `translate3d(-50%, ${threshold / 2.5}px, 0)`
   },
 
-  aborting({ elRefresh }) {
+  aborting({ elControl }) {
     return new Promise(resolve => {
-      elRefresh.style.transition = 'transform 0.3s, opacity 0.15s'
-      elRefresh.style.transform = 'translate3d(-50%, 0, 0)'
-      elRefresh.style.opacity = 0
-      elRefresh.addEventListener('transitionend', () => {
-        elRefresh.style.transition = ''
+      elControl.style.transition = 'transform 0.3s, opacity 0.15s'
+      elControl.style.transform = 'translate3d(-50%, 0, 0)'
+      elControl.style.opacity = 0
+      elControl.addEventListener('transitionend', () => {
+        elControl.style.transition = ''
         resolve()
       })
     })
   },
 
-  restoring({ elRefresh }) {
+  restoring({ elControl }) {
     return new Promise(resolve => {
-      elRefresh.style.transition = 'transform 0.3s'
-      elRefresh.style.transform += ' scale(0.01)'
-      elRefresh.addEventListener('transitionend', () => {
-        elRefresh.style.transition = ''
+      elControl.style.transition = 'transform 0.3s'
+      elControl.style.transform += ' scale(0.01)'
+      elControl.addEventListener('transitionend', () => {
+        elControl.style.transition = ''
         resolve()
       })
     })

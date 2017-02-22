@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href="../dist/styles/ios/style.css" rel="stylesheet">
+    <script src="../dist/styles/ios/animates.js"></script>
+    <script src="../dist/pullToRefresh.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        margin-top: 56px;
+        font-family: sans-serif;
+        background: #fafafa;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 56px;
+        line-height: 56px;
+        font-size: 18px;
+        color: #fff;
+        padding: 0 16px;
+        background: #039be5;
+        z-index: 9999;
+        box-shadow: 0 2px 5px rgba(0,0,0,.26);
+      }
+
+      main {
+        height: 1000px;
+        background: #fff;
+      }
+
+      h1 {
+        font-size: 18px;
+        text-align: center;
+        padding-top: 10em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>Header</header>
+    <div class="container pull-to-refresh-ios">
+      <div class="pull-to-refresh-ios__spinner">
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+        <div class="pull-to-refresh-ios__blade"></div>
+      </div>
+
+      <main class="pull-to-refresh-ios__main">
+        <h1>Pull to refresh</h1>
+      </main>
+    </div>
+
+    <script>
+      pullToRefresh({
+        container: document.querySelector('.container'),
+        threshold: 150,
+        animates: ptrAnimatesIos,
+
+        refresh() {
+          return new Promise(resolve => {
+            setTimeout(resolve, 2000)
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

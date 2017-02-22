@@ -1,4 +1,8 @@
-.pull-to-refresh {
+.pull-to-refresh-material {
+  position: relative;
+}
+
+.pull-to-refresh-material__control {
   position: absolute;
   top: -50px;
   left: 50%;
@@ -13,41 +17,41 @@
   display: none;
 }
 
-.pull-to-refresh--pulling .pull-to-refresh,
-.pull-to-refresh--aborting .pull-to-refresh,
-.pull-to-refresh--reached .pull-to-refresh,
-.pull-to-refresh--refreshing .pull-to-refresh,
-.pull-to-refresh--restoring .pull-to-refresh {
+.pull-to-refresh--pulling .pull-to-refresh-material__control,
+.pull-to-refresh--aborting .pull-to-refresh-material__control,
+.pull-to-refresh--reached .pull-to-refresh-material__control,
+.pull-to-refresh--refreshing .pull-to-refresh-material__control,
+.pull-to-refresh--restoring .pull-to-refresh-material__control {
   display: flex;
 }
 
-.pull-to-refresh--pulling .pull-to-refresh__spinner,
-.pull-to-refresh--aborting .pull-to-refresh__spinner,
-.pull-to-refresh--reached .pull-to-refresh__spinner,
-.pull-to-refresh--refreshing .pull-to-refresh__icon,
-.pull-to-refresh--restoring .pull-to-refresh__icon {
+.pull-to-refresh--pulling .pull-to-refresh-material__spinner,
+.pull-to-refresh--aborting .pull-to-refresh-material__spinner,
+.pull-to-refresh--reached .pull-to-refresh-material__spinner,
+.pull-to-refresh--refreshing .pull-to-refresh-material__icon,
+.pull-to-refresh--restoring .pull-to-refresh-material__icon {
   display: none;
 }
 
-.pull-to-refresh__spinner {
+.pull-to-refresh-material__spinner {
   transform-origin: center center;
   animation: pull-to-refresh-rotate 2s linear infinite;
 }
 
-.pull-to-refresh__path {
+.pull-to-refresh-material__path {
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  animation: pull-to-refresh-dash 1.5s ease-in-out infinite, pull-to-refresh-color 6s ease-in-out infinite;
+  animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-color 6s ease-in-out infinite;
 }
 
-@keyframes pull-to-refresh-rotate {
+@keyframes pull-to-refresh-material-rotate {
   100% {
     transform: rotate(360deg);
   }
 }
 
-@keyframes pull-to-refresh-dash {
+@keyframes pull-to-refresh-material-dash {
   0% {
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
@@ -62,7 +66,7 @@
   }
 }
 
-@keyframes pull-to-refresh-color {
+@keyframes pull-to-refresh-material-color {
   100%,
   0% {
     stroke: #03a9f4;

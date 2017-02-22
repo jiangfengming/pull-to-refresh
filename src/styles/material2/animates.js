@@ -1,15 +1,15 @@
 const animates = {
   pulling(d, opts) {
-    if (!opts.elRefresh) opts.elRefresh = opts.container.querySelector('.pull-to-refresh')
+    if (!opts.elControl) opts.elControl = opts.container.querySelector('.pull-to-refresh-material2__control')
 
-    const { container, threshold, elRefresh } = opts
+    const { container, threshold, elControl } = opts
 
     let p = d / threshold
     if (p > 1) p = 1
     else p = p * p * p
     container.style.transform = `translate3d(0, ${d / 2.5}px, 0)`
-    elRefresh.style.opacity = p
-    elRefresh.style.transform = `translate3d(-50%, 0, 0) rotate(${360 * p}deg)`
+    elControl.style.opacity = p
+    elControl.style.transform = `translate3d(-50%, 0, 0) rotate(${360 * p}deg)`
   },
 
   refreshing({ container, threshold }) {

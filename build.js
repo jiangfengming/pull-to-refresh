@@ -4,7 +4,8 @@ const babel = require('rollup-plugin-babel')
 const files = [
   'pullToRefresh',
   ['styles/material/animates', 'ptrAnimatesMaterial'],
-  ['styles/mixed/animates', 'ptrAnimatesMixed']
+  ['styles/material2/animates', 'ptrAnimatesMaterial2'],
+  ['styles/ios/animates', 'ptrAnimatesIos']
 ]
 
 files.forEach(item => {
