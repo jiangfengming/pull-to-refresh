@@ -20,13 +20,13 @@
 
 ## 如何使用
 
-### 安装:
+### 安装
 
 ```
 npm install mobile-pull-to-refresh --save
 ```
 
-### 引入JS和CSS (webpack 2):
+### 引入JS和CSS (webpack 2)
 
 ```js
 // Import the style you want
@@ -52,7 +52,7 @@ import 'mobile-pull-to-refresh/dist/styles/ios/style.css'
 * [Material style 2](examples/material2.html)
 * [iOS style](examples/ios.html)
 
-### 调用:
+### 调用
 
 ```js
 pullToRefresh({

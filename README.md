@@ -20,13 +20,13 @@ Pull to refresh control for mobile web. Small and no dependencies.
 
 ## How to use
 
-### Installing:
+### Installing
 
 ```
 npm install mobile-pull-to-refresh --save
 ```
 
-### Including JS and CSS (webpack 2):
+### Including JS and CSS (webpack 2)
 
 ```js
 // Import the style you want
@@ -52,7 +52,7 @@ Please checkout the example html files.
 * [Material style 2](examples/material2.html)
 * [iOS style](examples/ios.html)
 
-### Invoking:
+### Invoking
 
 ```js
 pullToRefresh({
