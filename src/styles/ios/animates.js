@@ -11,10 +11,10 @@ const animates = {
     if (p > 1) p = 1
     else p = p * p * p
 
-    const spinnerCls = Math.ceil(p * 12) || 1
+    const spinnerCls = Math.floor(p * 12)
     if (opts.spinnerCls !== spinnerCls) {
       if (opts.spinnerCls) elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + opts.spinnerCls)
-      elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + spinnerCls)
+      if (spinnerCls) elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + spinnerCls)
       opts.spinnerCls = spinnerCls
     }
 
@@ -50,7 +50,7 @@ const animates = {
   restoring(opts) {
     return new Promise(resolve => {
       const { elMain, elSpinner, spinnerCls } = opts
-      elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + spinnerCls)
+      if (spinnerCls) elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + spinnerCls)
       opts.spinnerCls = null
       elMain.style.transition = 'transform 0.3s'
       elMain.style.transform = 'translate3d(0, 0, 0)'

@@ -6,11 +6,13 @@
     <link href="../dist/styles/ios/style.css" rel="stylesheet">
     <script src="../dist/styles/ios/animates.js"></script>
     <script src="../dist/pullToRefresh.js"></script>
+    <meta name="theme-color" content="#f7f7f8">
+    <title>Pull to refresh - iOS style</title>
 
     <style>
       body {
         margin: 0;
-        margin-top: 56px;
+        margin-top: 44px;
         font-family: sans-serif;
         background: #fafafa;
       }
@@ -20,25 +22,28 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 56px;
-        line-height: 56px;
-        font-size: 18px;
-        color: #fff;
-        padding: 0 16px;
-        background: #039be5;
+        height: 44px;
+        line-height: 44px;
+        font-size: 17px;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+        background: #f7f7f8;
         z-index: 9999;
-        box-shadow: 0 2px 5px rgba(0,0,0,.26);
+        border-bottom: 1px solid #c4c4c4;
+        box-sizing: border-box;
       }
 
       main {
         height: 1000px;
         background: #fff;
+        padding: 1em;
       }
 
       h1 {
         font-size: 18px;
         text-align: center;
-        padding-top: 10em;
+        padding-top: 8em;
       }
     </style>
   </head>
@@ -62,7 +67,8 @@
       </div>
 
       <main class="pull-to-refresh-ios__main">
-        <h1>Pull to refresh</h1>
+        <h1>Pull down to refresh</h1>
+        <p>Pulling up should shrink the address bar in Chrome mobile and Safari mobile</p>
       </main>
     </div>
 

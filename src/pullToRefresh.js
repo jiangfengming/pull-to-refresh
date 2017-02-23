@@ -21,7 +21,7 @@ export default function(opts) {
     onpanmove(e) {
       let d = e.deltaY
 
-      if (scrollable.scrollTop !== 0 || d < 0 && !state || state in { refreshing: 1, restoring: 1 }) return
+      if (scrollable.scrollTop > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return
 
       e.preventDefault()
 
@@ -43,7 +43,7 @@ export default function(opts) {
         onStateChange(state, opts)
       }
 
-      animates.pulling(distance, opts)
+      animates.pulling(d, opts)
     },
 
     onpanend() {
@@ -59,7 +59,7 @@ export default function(opts) {
           distance = state = offset = null
           onStateChange(state)
         })
-      } else {
+      } else if (state === 'reached') {
         removeClass(state)
         state = 'refreshing'
         addClass(state)

@@ -19,10 +19,10 @@ var animates = {
     var p = d / threshold;
     if (p > 1) p = 1;else p = p * p * p;
 
-    var spinnerCls = Math.ceil(p * 12) || 1;
+    var spinnerCls = Math.floor(p * 12);
     if (opts.spinnerCls !== spinnerCls) {
       if (opts.spinnerCls) elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + opts.spinnerCls);
-      elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + spinnerCls);
+      if (spinnerCls) elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + spinnerCls);
       opts.spinnerCls = spinnerCls;
     }
 
@@ -62,7 +62,7 @@ var animates = {
           elSpinner = opts.elSpinner,
           spinnerCls = opts.spinnerCls;
 
-      elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + spinnerCls);
+      if (spinnerCls) elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + spinnerCls);
       opts.spinnerCls = null;
       elMain.style.transition = 'transform 0.3s';
       elMain.style.transform = 'translate3d(0, 0, 0)';

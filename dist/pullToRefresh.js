@@ -16,26 +16,14 @@ var ontouchpan = function (_ref) {
       panstartCalled = void 0;
 
   function calcMovement(e) {
-    for (var _iterator = e.changedTouches, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref2;
+    var touch = Array.prototype.slice.call(e.changedTouches).filter(function (touch) {
+      return touch.identifier === touchId;
+    })[0];
+    if (!touch) return false;
 
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref2 = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref2 = _i.value;
-      }
-
-      var touch = _ref2;
-
-      if (touch.identifier === touchId) {
-        e.deltaX = touch.screenX - startX;
-        e.deltaY = touch.screenY - startY;
-        return true;
-      }
-    }
+    e.deltaX = touch.screenX - startX;
+    e.deltaY = touch.screenY - startY;
+    return true;
   }
 
   function touchstart(e) {
@@ -100,7 +88,7 @@ var pullToRefresh = function (opts) {
     onpanmove: function onpanmove(e) {
       var d = e.deltaY;
 
-      if (scrollable.scrollTop !== 0 || d < 0 && !state || state in { refreshing: 1, restoring: 1 }) return;
+      if (scrollable.scrollTop > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return;
 
       e.preventDefault();
 
@@ -122,7 +110,7 @@ var pullToRefresh = function (opts) {
         onStateChange(state, opts);
       }
 
-      animates.pulling(distance, opts);
+      animates.pulling(d, opts);
     },
     onpanend: function onpanend() {
       if (state == null) return;
@@ -137,7 +125,7 @@ var pullToRefresh = function (opts) {
           distance = state = offset = null;
           onStateChange(state);
         });
-      } else {
+      } else if (state === 'reached') {
         removeClass(state);
         state = 'refreshing';
         addClass(state);

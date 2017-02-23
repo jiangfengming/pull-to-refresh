@@ -2,13 +2,12 @@ export default function({ element, onpanstart, onpanmove, onpanend }) {
   let touchId, startX, startY, panstartCalled
 
   function calcMovement(e) {
-    for (const touch of e.changedTouches) {
-      if (touch.identifier === touchId) {
-        e.deltaX = touch.screenX - startX
-        e.deltaY = touch.screenY - startY
-        return true
-      }
-    }
+    const touch = Array.prototype.slice.call(e.changedTouches).filter(touch => touch.identifier === touchId)[0]
+    if (!touch) return false
+
+    e.deltaX = touch.screenX - startX
+    e.deltaY = touch.screenY - startY
+    return true
   }
 
   function touchstart(e) {
