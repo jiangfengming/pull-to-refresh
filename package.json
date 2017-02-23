@@ -1,7 +1,7 @@
 {
-  "name": "pull-to-refresh",
+  "name": "mobile-pull-to-refresh",
   "version": "0.1.0",
-  "description": "",
+  "description": "Pull to refresh",
   "main": "dist/pullToRefresh.js",
   "scripts": {
     "build": "node build && gulp"

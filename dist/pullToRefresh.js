@@ -60,14 +60,19 @@ var ontouchpan = function (_ref) {
 };
 
 var pullToRefresh = function (opts) {
-  if (!opts.scrollable) opts.scrollable = document.body;
-  if (!opts.onStateChange) opts.onStateChange = function () {/* noop */};
-  var container = opts.container,
-      scrollable = opts.scrollable,
-      threshold = opts.threshold,
-      refresh = opts.refresh,
-      onStateChange = opts.onStateChange,
-      animates = opts.animates;
+  opts = Object.assign({
+    scrollable: document.body,
+    threshold: 150,
+    onStateChange: function onStateChange() {/* noop */}
+  }, opts);
+
+  var _opts = opts,
+      container = _opts.container,
+      scrollable = _opts.scrollable,
+      threshold = _opts.threshold,
+      refresh = _opts.refresh,
+      onStateChange = _opts.onStateChange,
+      animates = _opts.animates;
 
 
   var distance = void 0,

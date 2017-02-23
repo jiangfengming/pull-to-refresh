@@ -1,8 +1,12 @@
 import ontouchpan from './ontouchpan'
 
 export default function(opts) {
-  if (!opts.scrollable) opts.scrollable = document.body
-  if (!opts.onStateChange) opts.onStateChange = () => { /* noop */ }
+  opts = Object.assign({
+    scrollable: document.body,
+    threshold: 150,
+    onStateChange() { /* noop */ }
+  }, opts)
+
   const { container, scrollable, threshold, refresh, onStateChange, animates } = opts
 
   let distance, offset, state // state: pulling, aborting, reached, refreshing, restoring

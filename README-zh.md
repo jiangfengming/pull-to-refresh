@@ -1,32 +1,32 @@
-[ [中文](README-zh.md) ]
+[ [English](README.md) ]
 
 # Pull to refresh
 
-Pull to refresh control for mobile web. Small and no dependencies.
+移动端下拉刷新控件. 体积小无依赖.
 
-## Previews
+## 预览
 
 ![Material style](imgs/material.gif)
 
-[Material style](examples/material.html)
+[Material样式](examples/material.html)
 
 ![Material style 2](imgs/material2.gif)
 
-[Material style 2](examples/material2.html)
+[Material样式2](examples/material2.html)
 
 ![iOS style](imgs/ios.gif)
 
-[iOS style](examples/ios.html)
+[iOS样式](examples/ios.html)
 
-## How to use
+## 如何使用
 
-### Installing:
+### 安装:
 
 ```
 npm install mobile-pull-to-refresh --save
 ```
 
-### Including JS and CSS (webpack 2):
+### 引入JS和CSS (webpack 2):
 
 ```js
 // Import the style you want
@@ -45,14 +45,14 @@ import ptrAnimatesIos from 'mobile-pull-to-refresh/dist/styles/ios/animates'
 import 'mobile-pull-to-refresh/dist/styles/ios/style.css'
 ```
 
-### HTML snippets
+### HTML代码
 
-Please checkout the example html files.
+请查看例子中的HTMl文件.
 * [Material style](examples/material.html)
 * [Material style 2](examples/material2.html)
 * [iOS style](examples/ios.html)
 
-### Invoking:
+### 调用:
 
 ```js
 pullToRefresh({
@@ -70,11 +70,11 @@ pullToRefresh({
 })
 ```
 
-## License
+## 许可
 
 [MIT](LICENSE)
 
-## Credit to
+## 友情鸣谢
 
 * Material spinner by [jczimm](https://codepen.io/jczimm/pen/vEBpoL)
 * iOS spinner by [Jianqiu Xiao](https://github.com/swordray/ispinner)
