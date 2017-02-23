@@ -29,6 +29,8 @@ npm install mobile-pull-to-refresh --save
 ### 引入JS和CSS (webpack 2)
 
 ```js
+import pullToRefresh from 'mobile-pull-to-refresh'
+
 // Import the style you want
 
 // Material
@@ -38,7 +40,6 @@ import 'mobile-pull-to-refresh/dist/styles/material/style.css'
 // Material 2
 import ptrAnimatesMaterial2 from 'mobile-pull-to-refresh/dist/styles/material2/animates'
 import 'mobile-pull-to-refresh/dist/styles/material2/style.css'
-
 
 // iOS
 import ptrAnimatesIos from 'mobile-pull-to-refresh/dist/styles/ios/animates'
