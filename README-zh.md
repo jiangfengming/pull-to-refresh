@@ -6,15 +6,15 @@
 
 ## 预览
 
-![Material style](imgs/material.gif)
+![Material样式](imgs/material.gif)
 
 [Material样式](examples/material.html)
 
-![Material style 2](imgs/material2.gif)
+![Material样式2](imgs/material2.gif)
 
 [Material样式2](examples/material2.html)
 
-![iOS style](imgs/ios.gif)
+![iOS样式](imgs/ios.gif)
 
 [iOS样式](examples/ios.html)
 
