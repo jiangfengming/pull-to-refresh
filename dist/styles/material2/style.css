@@ -43,8 +43,8 @@
 .pull-to-refresh-material2__spinner {
   -webkit-transform-origin: center center;
           transform-origin: center center;
-  -webkit-animation: pull-to-refresh-rotate 2s linear infinite;
-          animation: pull-to-refresh-rotate 2s linear infinite;
+  -webkit-animation: pull-to-refresh-material2-rotate 2s linear infinite;
+          animation: pull-to-refresh-material2-rotate 2s linear infinite;
 }
 
 .pull-to-refresh-material2__path {
