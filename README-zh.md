@@ -6,17 +6,19 @@
 
 ## 预览
 
+请在手机版Chrome, Safari中查看, 或打开PC版Chrome DevTools的手机模拟器.
+
 ![Material样式](imgs/material.gif)
 
-[Material样式](examples/material.html)
+[Material样式](https://fenivana.github.io/pull-to-refresh/examples/material.html)
 
 ![Material样式2](imgs/material2.gif)
 
-[Material样式2](examples/material2.html)
+[Material样式2](https://fenivana.github.io/pull-to-refresh/examples/material2.html)
 
 ![iOS样式](imgs/ios.gif)
 
-[iOS样式](examples/ios.html)
+[iOS样式](https://fenivana.github.io/pull-to-refresh/examples/ios.html)
 
 ## 如何使用
 

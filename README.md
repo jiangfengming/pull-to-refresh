@@ -6,17 +6,19 @@ Pull to refresh control for mobile web. Small and no dependencies.
 
 ## Previews
 
+You can checkout the demos in Chrome mobile, Safari mobile, or toggle the device simulator on in Chrome DevTools.
+
 ![Material style](imgs/material.gif)
 
-[Material style](examples/material.html)
+[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html)
 
 ![Material style 2](imgs/material2.gif)
 
-[Material style 2](examples/material2.html)
+[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html)
 
 ![iOS style](imgs/ios.gif)
 
-[iOS style](examples/ios.html)
+[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html)
 
 ## How to use
 
