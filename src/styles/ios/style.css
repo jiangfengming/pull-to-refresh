@@ -4,7 +4,7 @@
 
 .pull-to-refresh-ios__spinner {
   position: absolute;
-  top: 10px;
+  top: 16px;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
   width: 28px;
