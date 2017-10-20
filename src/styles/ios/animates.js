@@ -18,7 +18,8 @@ const animates = {
       opts.spinnerCls = spinnerCls
     }
 
-    elMain.style.transform = `translate3d(0, ${d / 2.5}px, 0)`
+    const y = d / 2.5
+    elMain.style.transform = y ? `translate3d(0, ${y}px, 0)` : ''
   },
 
   refreshing({ elMain, threshold }) {
@@ -32,18 +33,24 @@ const animates = {
 
       let n = opts.spinnerCls
       opts.spinnerCls = null
-      const timer = setInterval(() => {
-        elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + n)
-        if (--n === 0) clearInterval(timer)
-        else elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + n)
-      }, 300 / n)
+      if (n) {
+        const timer = setInterval(() => {
+          elSpinner.classList.remove('pull-to-refresh-ios__spinner--s' + n)
+          if (--n === 0) clearInterval(timer)
+          else elSpinner.classList.add('pull-to-refresh-ios__spinner--s' + n)
+        }, 300 / n)
+      }
 
-      elMain.style.transition = 'transform 0.3s'
-      elMain.style.transform = 'translate3d(0, 0, 0)'
-      elMain.addEventListener('transitionend', () => {
-        elMain.style.transition = ''
+      if (elMain.style.transform) {
+        elMain.style.transition = 'transform 0.3s'
+        elMain.style.transform = 'translate3d(0, 0, 0)'
+        elMain.addEventListener('transitionend', () => {
+          elMain.style.transition = ''
+          resolve()
+        })
+      } else {
         resolve()
-      })
+      }
     })
   },
 

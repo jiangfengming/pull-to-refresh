@@ -7,7 +7,9 @@ const animates = {
     let p = d / threshold
     if (p > 1) p = 1
     else p = p * p * p
-    container.style.transform = `translate3d(0, ${d / 2.5}px, 0)`
+
+    const y = d / 2.5
+    container.style.transform = y ? `translate3d(0, ${y}px, 0)` : ''
     elControl.style.opacity = p
     elControl.style.transform = `translate3d(-50%, 0, 0) rotate(${360 * p}deg)`
   },
@@ -19,12 +21,16 @@ const animates = {
 
   restoring({ container }) {
     return new Promise(resolve => {
-      container.style.transition = 'transform 0.3s'
-      container.style.transform = 'translate3d(0, 0, 0)'
-      container.addEventListener('transitionend', () => {
-        container.style.transition = ''
+      if (container.style.transform) {
+        container.style.transition = 'transform 0.3s'
+        container.style.transform = 'translate3d(0, 0, 0)'
+        container.addEventListener('transitionend', () => {
+          container.style.transition = ''
+          resolve()
+        })
+      } else {
         resolve()
-      })
+      }
     })
   }
 }

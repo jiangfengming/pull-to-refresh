@@ -14,13 +14,13 @@ files.forEach(item => {
   else [entry, name] = item
 
   rollup({
-    entry: `src/${entry}.js`,
+    input: `src/${entry}.js`,
     plugins: [babel()]
   }).then(bundle => [
     bundle.write({
-      dest: `dist/${entry}.js`,
+      file: `dist/${entry}.js`,
       format: 'umd',
-      moduleName: name
+      name
     })
   ])
 })

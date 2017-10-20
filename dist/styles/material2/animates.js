@@ -15,7 +15,9 @@ var animates = {
 
     var p = d / threshold;
     if (p > 1) p = 1;else p = p * p * p;
-    container.style.transform = 'translate3d(0, ' + d / 2.5 + 'px, 0)';
+
+    var y = d / 2.5;
+    container.style.transform = y ? 'translate3d(0, ' + y + 'px, 0)' : '';
     elControl.style.opacity = p;
     elControl.style.transform = 'translate3d(-50%, 0, 0) rotate(' + 360 * p + 'deg)';
   },
@@ -30,12 +32,16 @@ var animates = {
     var container = _ref2.container;
 
     return new Promise(function (resolve) {
-      container.style.transition = 'transform 0.3s';
-      container.style.transform = 'translate3d(0, 0, 0)';
-      container.addEventListener('transitionend', function () {
-        container.style.transition = '';
+      if (container.style.transform) {
+        container.style.transition = 'transform 0.3s';
+        container.style.transform = 'translate3d(0, 0, 0)';
+        container.addEventListener('transitionend', function () {
+          container.style.transition = '';
+          resolve();
+        });
+      } else {
         resolve();
-      });
+      }
     });
   }
 };
