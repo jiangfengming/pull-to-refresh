@@ -2,6 +2,7 @@ import ontouchpan from './ontouchpan'
 
 export default function(opts) {
   opts = Object.assign({
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=766938
     scrollable: document.body,
     threshold: 150,
     onStateChange() { /* noop */ }
@@ -19,13 +20,21 @@ export default function(opts) {
     container.classList.remove('pull-to-refresh--' + cls)
   }
 
+  function scrollTop() {
+    if (!scrollable || [window, document, document.body, document.documentElement].includes(scrollable)) {
+      return document.documentElement.scrollTop || document.body.scrollTop
+    } else {
+      return scrollable.scrollTop
+    }
+  }
+
   return ontouchpan({
     element: container,
 
     onpanmove(e) {
       let d = e.deltaY
 
-      if (scrollable.scrollTop > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return
+      if (scrollTop() > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return
 
       e.preventDefault()
 

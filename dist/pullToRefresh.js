@@ -4,7 +4,7 @@
 	(global.pullToRefresh = factory());
 }(this, (function () { 'use strict';
 
-var ontouchpan = function (_ref) {
+function ontouchpan (_ref) {
   var element = _ref.element,
       onpanstart = _ref.onpanstart,
       onpanmove = _ref.onpanmove,
@@ -57,10 +57,11 @@ var ontouchpan = function (_ref) {
     if (onpanmove) element.removeEventListener('touchmove', touchmove);
     if (onpanend) element.removeEventListener('touchend', touchend);
   };
-};
+}
 
-var pullToRefresh = function (opts) {
+function pullToRefresh (opts) {
   opts = Object.assign({
+    // https://bugs.chromium.org/p/chromium/issues/detail?id=766938
     scrollable: document.body,
     threshold: 150,
     onStateChange: function onStateChange() {/* noop */}
@@ -87,13 +88,21 @@ var pullToRefresh = function (opts) {
     container.classList.remove('pull-to-refresh--' + cls);
   }
 
+  function scrollTop() {
+    if (!scrollable || [window, document, document.body, document.documentElement].includes(scrollable)) {
+      return document.documentElement.scrollTop || document.body.scrollTop;
+    } else {
+      return scrollable.scrollTop;
+    }
+  }
+
   return ontouchpan({
     element: container,
 
     onpanmove: function onpanmove(e) {
       var d = e.deltaY;
 
-      if (scrollable.scrollTop > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return;
+      if (scrollTop() > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return;
 
       e.preventDefault();
 
@@ -152,7 +161,7 @@ var pullToRefresh = function (opts) {
       }
     }
   });
-};
+}
 
 return pullToRefresh;
 
