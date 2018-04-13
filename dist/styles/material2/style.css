@@ -52,8 +52,8 @@
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  -webkit-animation: pull-to-refresh-material2-dash 1.5s ease-in-out infinite, pull-to-refresh-material2-color 6s ease-in-out infinite;
-          animation: pull-to-refresh-material2-dash 1.5s ease-in-out infinite, pull-to-refresh-material2-color 6s ease-in-out infinite;
+  -webkit-animation: pull-to-refresh-material2-dash 1.5s ease-in-out infinite, 6s ease-in-out infinite;
+          animation: pull-to-refresh-material2-dash 1.5s ease-in-out infinite, 6s ease-in-out infinite;
 }
 
 @-webkit-keyframes pull-to-refresh-material2-rotate {
@@ -97,39 +97,5 @@
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -124px;
-  }
-}
-
-@-webkit-keyframes pull-to-refresh-material2-color {
-  100%,
-  0% {
-    stroke: #03a9f4;
-  }
-  40% {
-    stroke: #03a9f4;
-  }
-  66% {
-    stroke: #03a9f4;
-  }
-  80%,
-  90% {
-    stroke: #03a9f4;
-  }
-}
-
-@keyframes pull-to-refresh-material2-color {
-  100%,
-  0% {
-    stroke: #03a9f4;
-  }
-  40% {
-    stroke: #03a9f4;
-  }
-  66% {
-    stroke: #03a9f4;
-  }
-  80%,
-  90% {
-    stroke: #03a9f4;
   }
 }
