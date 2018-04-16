@@ -8,17 +8,20 @@
 
 请在手机版Chrome, Safari中查看, 或打开PC版Chrome DevTools的手机模拟器.
 
-![Material样式](imgs/material.gif)
+[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html):  
+![Material style](imgs/material.gif)
 
-[Material样式](https://fenivana.github.io/pull-to-refresh/examples/material.html)
+[Material style - colorful](https://fenivana.github.io/pull-to-refresh/examples/material-colorful.html):  
+![Material style - colorful](imgs/material-colorful.gif)
 
-![Material样式2](imgs/material2.gif)
+[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html):  
+![Material style 2](imgs/material2.gif)
 
-[Material样式2](https://fenivana.github.io/pull-to-refresh/examples/material2.html)
+[Material style 2 - colorful](https://fenivana.github.io/pull-to-refresh/examples/material2-colorful.html):  
+![Material style 2 - colorful](imgs/material2-colorful.gif)
 
-![iOS样式](imgs/ios.gif)
-
-[iOS样式](https://fenivana.github.io/pull-to-refresh/examples/ios.html)
+[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html):  
+![iOS style](imgs/ios.gif)
 
 ## 如何使用
 
@@ -28,7 +31,7 @@
 npm install mobile-pull-to-refresh --save
 ```
 
-### 引入JS和CSS (webpack 2)
+### 引入JS和CSS (webpack)
 
 ```js
 import pullToRefresh from 'mobile-pull-to-refresh'
@@ -50,9 +53,11 @@ import 'mobile-pull-to-refresh/dist/styles/ios/style.css'
 
 ### HTML代码
 
-请查看例子中的HTMl文件.
+请查看例子中的HTMl文件:
 * [Material style](examples/material.html)
+* [Material style - colorful](examples/material-colorful.html)
 * [Material style 2](examples/material2.html)
+* [Material style 2 - colorful](examples/material2-colorful.html)
 * [iOS style](examples/ios.html)
 
 ### 调用

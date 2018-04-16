@@ -1,6 +1,6 @@
 {
   "name": "mobile-pull-to-refresh",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Pull to refresh",
   "main": "dist/pullToRefresh.js",
   "scripts": {
@@ -20,16 +20,15 @@
   },
   "homepage": "https://github.com/fenivana/pull-to-refresh#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
+    "autoprefixer": "^8.3.0",
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
-    "eslint": "^4.13.1",
+    "eslint": "^4.19.1",
     "eslint-config-enough": "^0.3.0",
     "gulp": "^3.9.1",
-    "gulp-postcss": "^7.0.0",
-    "rollup": "^0.52.3",
+    "gulp-postcss": "^7.0.1",
+    "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3"
   },
   "babel": {
@@ -47,7 +46,8 @@
   "eslintConfig": {
     "extends": "enough",
     "env": {
-      "browser": true
+      "browser": true,
+      "node": true
     }
   }
 }

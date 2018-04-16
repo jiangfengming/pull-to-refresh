@@ -10,16 +10,11 @@
           transform: translate3d(-50%, 0, 0);
   width: 40px;
   height: 40px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   border-radius: 50%;
-  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
-          box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
+  box-shadow: 0 1px 6px rgba(0,0,0,.117647), 0 1px 4px rgba(0,0,0,.117647);
   display: none;
 }
 
@@ -28,8 +23,6 @@
 .pull-to-refresh--reached .pull-to-refresh-material__control,
 .pull-to-refresh--refreshing .pull-to-refresh-material__control,
 .pull-to-refresh--restoring .pull-to-refresh-material__control {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -52,8 +45,13 @@
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  -webkit-animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-color 6s ease-in-out infinite;
-          animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-color 6s ease-in-out infinite;
+  -webkit-animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite;
+          animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite;
+}
+
+.pull-to-refresh-material__path--colorful {
+  -webkit-animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-colorful 6s ease-in-out infinite;
+          animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-colorful 6s ease-in-out infinite;
 }
 
 @-webkit-keyframes pull-to-refresh-material-rotate {
@@ -100,36 +98,36 @@
   }
 }
 
-@-webkit-keyframes pull-to-refresh-material-color {
+@-webkit-keyframes pull-to-refresh-material-colorful {
   100%,
   0% {
-    stroke: #03a9f4;
+    stroke: #4285f4;
   }
   40% {
-    stroke: #03a9f4;
+    stroke: #ea4335;
   }
   66% {
-    stroke: #03a9f4;
+    stroke: #fbbc05;
   }
   80%,
   90% {
-    stroke: #03a9f4;
+    stroke: #34a853;
   }
 }
 
-@keyframes pull-to-refresh-material-color {
+@keyframes pull-to-refresh-material-colorful {
   100%,
   0% {
-    stroke: #03a9f4;
+    stroke: #4285f4;
   }
   40% {
-    stroke: #03a9f4;
+    stroke: #ea4335;
   }
   66% {
-    stroke: #03a9f4;
+    stroke: #fbbc05;
   }
   80%,
   90% {
-    stroke: #03a9f4;
+    stroke: #34a853;
   }
 }

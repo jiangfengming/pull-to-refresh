@@ -8,17 +8,20 @@ Pull to refresh control for mobile web. Small and no dependencies.
 
 You can checkout the demos in Chrome mobile, Safari mobile, or toggle the device simulator on in Chrome DevTools.
 
+[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html):  
 ![Material style](imgs/material.gif)
 
-[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html)
+[Material style - colorful](https://fenivana.github.io/pull-to-refresh/examples/material-colorful.html):  
+![Material style - colorful](imgs/material-colorful.gif)
 
+[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html):  
 ![Material style 2](imgs/material2.gif)
 
-[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html)
+[Material style 2 - colorful](https://fenivana.github.io/pull-to-refresh/examples/material2-colorful.html):  
+![Material style 2 - colorful](imgs/material2-colorful.gif)
 
+[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html):  
 ![iOS style](imgs/ios.gif)
-
-[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html)
 
 ## How to use
 
@@ -28,7 +31,7 @@ You can checkout the demos in Chrome mobile, Safari mobile, or toggle the device
 npm install mobile-pull-to-refresh --save
 ```
 
-### Including JS and CSS (webpack 2)
+### Including JS and CSS (webpack)
 
 ```js
 import pullToRefresh from 'mobile-pull-to-refresh'
@@ -50,9 +53,11 @@ import 'mobile-pull-to-refresh/dist/styles/ios/style.css'
 
 ### HTML snippets
 
-Please checkout the example html files.
+Please checkout the example html files:
 * [Material style](examples/material.html)
+* [Material style - colorful](examples/material-colorful.html)
 * [Material style 2](examples/material2.html)
+* [Material style 2 - colorful](examples/material2-colorful.html)
 * [iOS style](examples/ios.html)
 
 ### Invoking

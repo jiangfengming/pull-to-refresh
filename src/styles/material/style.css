@@ -42,7 +42,11 @@
   stroke-dasharray: 1, 200;
   stroke-dashoffset: 0;
   stroke-linecap: round;
-  animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-color 6s ease-in-out infinite;
+  animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite;
+}
+
+.pull-to-refresh-material__path--colorful {
+  animation: pull-to-refresh-material-dash 1.5s ease-in-out infinite, pull-to-refresh-material-colorful 6s ease-in-out infinite;
 }
 
 @keyframes pull-to-refresh-material-rotate {
@@ -66,19 +70,19 @@
   }
 }
 
-@keyframes pull-to-refresh-material-color {
+@keyframes pull-to-refresh-material-colorful {
   100%,
   0% {
-    stroke: #03a9f4;
+    stroke: #4285f4;
   }
   40% {
-    stroke: #03a9f4;
+    stroke: #ea4335;
   }
   66% {
-    stroke: #03a9f4;
+    stroke: #fbbc05;
   }
   80%,
   90% {
-    stroke: #03a9f4;
+    stroke: #34a853;
   }
 }
