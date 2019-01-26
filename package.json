@@ -1,6 +1,6 @@
 {
   "name": "mobile-pull-to-refresh",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Pull to refresh",
   "main": "dist/pullToRefresh.js",
   "scripts": {
