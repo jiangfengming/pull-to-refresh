@@ -8,19 +8,19 @@ Pull to refresh control for mobile web. Small and no dependencies.
 
 You can checkout the demos in Chrome mobile, Safari mobile, or toggle the device simulator on in Chrome DevTools.
 
-[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html):  
+[Material style](https://jiangfengming.github.io/pull-to-refresh/examples/material.html):  
 ![Material style](imgs/material.gif)
 
-[Material style - colorful](https://fenivana.github.io/pull-to-refresh/examples/material-colorful.html):  
+[Material style - colorful](https://jiangfengming.github.io/pull-to-refresh/examples/material-colorful.html):  
 ![Material style - colorful](imgs/material-colorful.gif)
 
-[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html):  
+[Material style 2](https://jiangfengming.github.io/pull-to-refresh/examples/material2.html):  
 ![Material style 2](imgs/material2.gif)
 
-[Material style 2 - colorful](https://fenivana.github.io/pull-to-refresh/examples/material2-colorful.html):  
+[Material style 2 - colorful](https://jiangfengming.github.io/pull-to-refresh/examples/material2-colorful.html):  
 ![Material style 2 - colorful](imgs/material2-colorful.gif)
 
-[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html):  
+[iOS style](https://jiangfengming.github.io/pull-to-refresh/examples/ios.html):  
 ![iOS style](imgs/ios.gif)
 
 ## How to use

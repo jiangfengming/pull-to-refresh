@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fenivana/pull-to-refresh.git"
+    "url": "git+https://github.com/jiangfengming/pull-to-refresh.git"
   },
   "keywords": [
     "pull-to-refresh"
@@ -16,9 +16,9 @@
   "author": "Jiang Fengming",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fenivana/pull-to-refresh/issues"
+    "url": "https://github.com/jiangfengming/pull-to-refresh/issues"
   },
-  "homepage": "https://github.com/fenivana/pull-to-refresh#readme",
+  "homepage": "https://github.com/jiangfengming/pull-to-refresh#readme",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
     "babel-core": "^6.26.0",

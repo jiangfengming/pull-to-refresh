@@ -8,19 +8,19 @@
 
 请在手机版Chrome, Safari中查看, 或打开PC版Chrome DevTools的手机模拟器.
 
-[Material style](https://fenivana.github.io/pull-to-refresh/examples/material.html):  
+[Material style](https://jiangfengming.github.io/pull-to-refresh/examples/material.html):  
 ![Material style](imgs/material.gif)
 
-[Material style - colorful](https://fenivana.github.io/pull-to-refresh/examples/material-colorful.html):  
+[Material style - colorful](https://jiangfengming.github.io/pull-to-refresh/examples/material-colorful.html):  
 ![Material style - colorful](imgs/material-colorful.gif)
 
-[Material style 2](https://fenivana.github.io/pull-to-refresh/examples/material2.html):  
+[Material style 2](https://jiangfengming.github.io/pull-to-refresh/examples/material2.html):  
 ![Material style 2](imgs/material2.gif)
 
-[Material style 2 - colorful](https://fenivana.github.io/pull-to-refresh/examples/material2-colorful.html):  
+[Material style 2 - colorful](https://jiangfengming.github.io/pull-to-refresh/examples/material2-colorful.html):  
 ![Material style 2 - colorful](imgs/material2-colorful.gif)
 
-[iOS style](https://fenivana.github.io/pull-to-refresh/examples/ios.html):  
+[iOS style](https://jiangfengming.github.io/pull-to-refresh/examples/ios.html):  
 ![iOS style](imgs/ios.gif)
 
 ## 如何使用
