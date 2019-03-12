@@ -63,7 +63,7 @@ Please checkout the example html files:
 ### Invoking
 
 ```js
-pullToRefresh({
+const destroyCb = pullToRefresh({
   container: document.querySelector('.container'),
   animates: ptrAnimatesMaterial,
   // animates: ptrAnimatesMaterial2,
