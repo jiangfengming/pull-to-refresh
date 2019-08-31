@@ -36,7 +36,9 @@ export default function(opts) {
 
       if (scrollTop() > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return
 
-      e.preventDefault()
+      if (e.cancelable) {
+        e.preventDefault()
+      }
 
       if (distance == null) {
         offset = d
