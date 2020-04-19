@@ -78,6 +78,16 @@ const destroyCb = pullToRefresh({
 })
 ```
 
+### Default options
+```js
+{
+  scrollable: document.body, //which element's scrollTop to check
+  threshold: 150,
+  onStateChange() { /* noop */ }
+}
+```
+
+
 ## License
 
 [MIT](LICENSE)
