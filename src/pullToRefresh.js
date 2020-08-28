@@ -5,6 +5,7 @@ export default function(opts) {
     // https://bugs.chromium.org/p/chromium/issues/detail?id=766938
     scrollable: document.body,
     threshold: 150,
+    checkAllParentsScroll: false,
     onStateChange() { /* noop */ }
   }, opts)
 
@@ -33,6 +34,17 @@ export default function(opts) {
 
     onpanmove(e) {
       let d = e.deltaY
+
+      if(opts.checkAllParentsScroll) {
+        // Check if all parents are scrolled to top
+        let cur = e.target;
+        while(cur) {
+          if(cur.scrollTop > 0) {
+            return;
+          }
+          cur = cur.parentNode;
+        }
+      }
 
       if (scrollTop() > 0 || d < 0 && !state || state in { aborting: 1, refreshing: 1, restoring: 1 }) return
 
