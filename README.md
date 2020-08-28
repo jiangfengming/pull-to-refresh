@@ -66,6 +66,7 @@ Please checkout the example html files:
 const destroyCb = pullToRefresh({
   container: document.querySelector('.container'),
   animates: ptrAnimatesMaterial,
+  checkAllParentsScroll: false,
   // animates: ptrAnimatesMaterial2,
   // animates: ptrAnimatesIos,
 
